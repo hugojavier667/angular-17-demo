@@ -2,7 +2,7 @@
 <button class="btn btn-primary m-2" #buttonTwo>Hover here</button>
 
 <div class="vw-90 vh-100 bg-light border border-dark">
-    @defer (on interaction(buttonOne); on hover(buttonTwo)) {
+    @defer (on interaction(buttonOne); on hover(buttonTwo); on timer(60s)) {
         <app-standalone-demo />
     } @placeholder {
         This is a placeholder
