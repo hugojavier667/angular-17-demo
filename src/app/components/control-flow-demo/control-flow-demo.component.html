@@ -17,10 +17,10 @@
 <hr>
 
 <p>New if control</p>
-<button class="btn btn-primary mx-2" (click)="isAutenticated = true">Login</button>
-<button class="btn btn-primary" (click)="isAutenticated = false">Logout</button>
+<button class="btn btn-primary mx-2" (click)="isAuthenticated = true">Login</button>
+<button class="btn btn-primary" (click)="isAuthenticated = false">Logout</button>
 
-@if (isAutenticated) {
+@if (isAuthenticated) {
     <p>Is autenticated</p>
 } @else if (false) {
     <p>Another condition</p>
@@ -31,10 +31,10 @@
 <hr>
 
 <p>Old if control</p>
-<button class="btn btn-primary mx-2" (click)="isAutenticated = true">Login</button>
-<button class="btn btn-primary" (click)="isAutenticated = false">Logout</button>
+<button class="btn btn-primary mx-2" (click)="isAuthenticated = true">Login</button>
+<button class="btn btn-primary" (click)="isAuthenticated = false">Logout</button>
 
-<p *ngIf="isAutenticated; else notAutenticated">Is autenticated</p>
+<p *ngIf="isAuthenticated; else notAutenticated">Is autenticated</p>
 <ng-template #notAutenticated>
     <p>Not autenticated</p>
 </ng-template>

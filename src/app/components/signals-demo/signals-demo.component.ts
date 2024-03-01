@@ -34,5 +34,8 @@ export class SignalsDemoComponent {
 
   public incrementFirstValue(): void {
     this.valueA.set(this.valueA() + 1);
+
+    // Use update to update signal based on current value
+    // this.valueA.update((value: number): number => value + 1);
   }
 }

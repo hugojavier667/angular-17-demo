@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class ControlFlowDemoComponent {
   public items: string[] = ['Item 1', 'Item 2', 'Item 3'];
 
-  public isAutenticated: boolean = false;
+  public isAuthenticated: boolean = false;
 
   public color: 'red' | 'blue' | 'green' | null = null;
 
