@@ -1,0 +1,11 @@
+<p>List of countries</p>
+
+Search by name: <input type="text" (change)="filterByName($event)">
+Total: {{filteredCountries().length}}
+<ul>
+    @for (country of filteredCountries(); track country.name) {
+        <li>{{country.name.common}}</li>
+    } @empty {
+        No countires
+    }  
+</ul>

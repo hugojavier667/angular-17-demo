@@ -1,0 +1,72 @@
+<p>New for loop</p>
+<ul>
+    @for (item of items; track $index) {
+        <li>{{item}}</li>
+    }
+</ul>
+
+<hr>
+
+<p>Old for loop</p>
+<ul>
+    <li *ngFor="let item of items; trackBy: trackByFn">
+        {{item}}
+    </li>
+</ul>
+
+<hr>
+
+<p>New if control</p>
+<button class="btn btn-primary mx-2" (click)="isAutenticated = true">Login</button>
+<button class="btn btn-primary" (click)="isAutenticated = false">Logout</button>
+@if (isAutenticated) {
+    <p>Is autenticated</p>
+} @else if (false) {
+    <p>Another condition</p>
+} @else {
+    <p>Not autenticated</p>
+}
+
+<hr>
+
+<p>Old if control</p>
+<button class="btn btn-primary mx-2" (click)="isAutenticated = true">Login</button>
+<button class="btn btn-primary" (click)="isAutenticated = false">Logout</button>
+<p *ngIf="isAutenticated; else notAutenticated">Is autenticated</p>
+<ng-template #notAutenticated>
+    <p>Not autenticated</p>
+</ng-template>
+
+<hr>
+
+<p>New switch control</p>
+<button class="btn btn-danger m-2" (click)="color = 'red'">Red</button>
+<button class="btn btn-primary m-2" (click)="color = 'blue'">Blue</button>
+<button class="btn btn-success m-2" (click)="color = 'green'">Green</button>
+@switch (color) {
+    @case ('red') {
+        <div class="p-3 mb-2 bg-danger text-white">Red</div>
+    }
+    @case ('blue') {
+        <div class="p-3 mb-2 bg-primary text-white">Blue</div>
+    }
+    @case ('green') {
+        <div class="p-3 mb-2 bg-success text-white">Green</div>
+    }
+    @default {
+        <div class="p-3 mb-2 bg-secondary text-white">No color</div>
+    }
+}
+
+<hr>
+
+<p>Old switch control</p>
+<button class="btn btn-danger m-2" (click)="color = 'red'">Red</button>
+<button class="btn btn-primary m-2" (click)="color = 'blue'">Blue</button>
+<button class="btn btn-success m-2" (click)="color = 'green'">Green</button>
+<ng-container [ngSwitch]="color">
+    <div *ngSwitchCase="'red'" class="p-3 mb-2 bg-danger text-white">Red</div>
+    <div *ngSwitchCase="'blue'" class="p-3 mb-2 bg-primary text-white">Blue</div>
+    <div *ngSwitchCase="'green'" class="p-3 mb-2 bg-success text-white">Green</div>
+    <div *ngSwitchDefault class="p-3 mb-2 bg-secondary text-white">No color</div>
+</ng-container>

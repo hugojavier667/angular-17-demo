@@ -1,0 +1,26 @@
+<button class="btn btn-primary m-2" #buttonOne>Click here</button>
+<button class="btn btn-primary m-2" #buttonTwo>Hover here</button>
+
+<div class="vw-90 vh-100 bg-light border border-dark">
+    @defer (on interaction(buttonOne); on hover(buttonTwo)) {
+        <app-standalone-demo />
+    } @placeholder {
+        This is a placeholder
+    } @loading {
+        The deferred component is loading
+    } @error {
+        There was an error loading the component
+    }
+</div>
+
+<div class="vw-90 vh-100 bg-light border border-dark mt-4">
+    @defer (on viewport) {
+        <app-signals-demo />
+    } @placeholder(minimum 5s) {
+        <p>This is a placeholder</p>
+    } @loading {
+        The deferred component is loading
+    } @error {
+        There was an error loading the component
+    }
+</div>
